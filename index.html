@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SGPA & CGPA Calculator</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+  <h1>🎓Smart Grade Calculator <span class="scale-logo"></span></h1>
+
+  <!-- Tab Switch Buttons -->
+  <div class="tab-buttons">
+    <button id="btn-sgpa" class="tab-btn active" onclick="showSection('sgpa')">SGPA Calculator</button>
+    <button id="btn-cgpa" class="tab-btn" onclick="showSection('cgpa')">CGPA Calculator</button>
+  </div>
+
+  <!-- SGPA Section -->
+  <section id="sgpa" class="tab-section">
+    <label for="numSubjects">Number of Subjects:</label>
+    <input
+      type="number"
+      id="numSubjects"
+      min="1"
+      placeholder="Enter number of subjects"
+    />
+    <button type="button" class="generate-btn" onclick="generateSubjects()">Generate</button>
+
+    <form id="sgpaForm"></form>
+
+    <button type="button" id="calcSgpaBtn" style="display:none;" onclick="calculateSGPA()">Calculate SGPA</button>
+
+    <div id="sgpaResult" class="result"></div>
+  </section>
+
+  <!-- CGPA Section -->
+  <section id="cgpa" class="tab-section hidden">
+    <label for="numSemesters">Number of Semesters:</label>
+    <input
+      type="number"
+      id="numSemesters"
+      min="1"
+      placeholder="Enter number of semesters"
+    />
+    <button type="button" class="generate-btn" onclick="generateSemesters()">Generate</button>
+
+    <form id="cgpaForm"></form>
+
+    <button type="button" id="calcCgpaBtn" style="display:none;" onclick="calculateCGPA()">Calculate CGPA</button>
+
+    <div id="cgpaResult" class="result"></div>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

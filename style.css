@@ -1,0 +1,181 @@
+/* Half-and-half rotating rainbow background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, red 50%, orange 50%);
+  background-size: 200% 100%;
+  animation: rainbowHalf 10s linear infinite;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+/* Rainbow rotation animation with lighter colors */
+@keyframes rainbowHalf {
+  0%   { background: linear-gradient(to right, #ffb3ba 50%, #ffe0b3 50%); }
+  14%  { background: linear-gradient(to right, #ffe0b3 50%, #ffffba 50%); }
+  28%  { background: linear-gradient(to right, #ffffba 50%, #baffc9 50%); }
+  42%  { background: linear-gradient(to right, #baffc9 50%, #bae1ff 50%); }
+  57%  { background: linear-gradient(to right, #bae1ff 50%, #b3baff 50%); }
+  71%  { background: linear-gradient(to right, #b3baff 50%, #e1b3ffd3 50%); }
+  85%  { background: linear-gradient(to right, #e1b3ffc5 50%,#ffb3ba 50%); }
+  100% { background: linear-gradient(to right, #ffb3ba 50%, #ffe0b3 50%); }
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px;
+  background-color: #ffffffa8; /* semi-transparent for rainbow to show */
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #1b1b1b;
+}
+
+.tab-buttons {
+  margin-bottom: 25px;
+}
+
+.tab-btn {
+  background: white;
+  border: 2px solid #92f596;
+  color: #94f697;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: #97fa9b;
+  color: white;
+  box-shadow: 0 0 12px #87f28b;
+}
+
+.tab-section {
+  display: block;
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+input[type='number'],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.generate-btn,
+#calcSgpaBtn,
+#calcCgpaBtn {
+  display: block;
+  margin: 10px auto;
+  background: #97fa9b;
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 6px 12px rgba(76, 227, 81, 0.5);
+  transition: background 1000s;
+}
+
+.generate-btn:hover,
+#calcSgpaBtn:hover,
+#calcCgpaBtn:hover {
+  background: #388e3c;
+}
+
+.subject-row,
+.semester-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.subject-row select,
+.subject-row input,
+.semester-row input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #1b5e20;
+}
+
+.result .emoji {
+  font-size: 30px;
+}
+
+/* ✅ Responsive fixes for mobile */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .tab-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tab-btn {
+    margin: 0;
+    width: 100%;
+  }
+
+  .subject-row,
+  .semester-row {
+    flex-wrap: wrap;
+  }
+
+  .subject-row select,
+  .subject-row input,
+  .semester-row input {
+    flex: 1 1 100%;
+  }
+}
